@@ -21,7 +21,7 @@ BOOL SetPrivilege(
         lpszPrivilege,   // privilege to lookup 
         &luid))        // receives LUID of privilege
     {
-        printf("LookupPrivilegeValue error: %u\n", GetLastError());
+        printf("[-] LookupPrivilegeValue error: %u\n", GetLastError());
         return FALSE;
     }
 
@@ -90,8 +90,8 @@ int main(int argc, char** argv) {
     
     BOOL resultadopriv = SetPrivilege(hToken, SE_BACKUP_NAME, TRUE);
 
-    if (resultadopriv == TRUE) { printf("[+] SeBackupPrivilege successfully added to token\n"); }
-    else { printf("[-] Error when assigning SeBackupPrivilege "); }
+    if (resultadopriv == TRUE) { printf("[+] SeBackupPrivilege successfully enabled\n"); }
+    else { printf("[-] Error when enabling SeBackupPrivilege\n "); }
 
     try {
 
@@ -103,7 +103,7 @@ int main(int argc, char** argv) {
         
     }
     catch (...) {
-        printf("[-] Error %d.\n", GetLastError());
+        printf("[-] Error code %d.\n", GetLastError());
     }
     
 }
