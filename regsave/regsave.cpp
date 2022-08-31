@@ -60,11 +60,11 @@ int main(int argc, char** argv) {
 
 
     if (argc != 3) {
-        printf("Usage: dumpfile.exe SAM/SYSTEM/SECURITY pathtosavedfile\n");
+        printf("Usage: regsave.exe SAM/SYSTEM/SECURITY pathtosavedfile\n");
         exit(1);
     }
     if ((argv[1] != std::string("SAM")) && (argv[1] != std::string("SYSTEM")) && (argv[1] != std::string("SECURITY"))){
-        printf("Usage: dumpfile.exe SAM/SYSTEM/SECURITY pathtosavedfile\n");
+        printf("Usage: regsave.exe SAM/SYSTEM/SECURITY pathtosavedfile\n");
         exit(1);
     }
 
